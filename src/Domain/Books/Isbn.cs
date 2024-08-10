@@ -1,9 +1,3 @@
-using System.Data;
-using System.Diagnostics.CodeAnalysis;
-using System.Net;
-using System.Net.NetworkInformation;
-using System.Text.RegularExpressions;
-
 namespace Domain.Books;
 
 public record Isbn
@@ -32,21 +26,19 @@ public record Isbn
 
         var isbnValueLength = isbnValue.Length;
 
-        if(isbnValueLength == 10)
+        if(isbnValueLength == Isbn10Length)
         {
             return IsValidIsbn10(isbnValue)
                 ? isbnValue
                 : throw new IsbnInvalidException(IsbnInvalidExceptionMessage);
         }
-
-        if(isbnValueLength == 13)
+        else
         {
             return IsValidIsbn13(isbnValue)
                 ? isbnValue
                 : throw new IsbnInvalidException(IsbnInvalidExceptionMessage);
-        }
 
-        return isbnValue;
+        }
     }
 
     private static bool IsIsbnValueTenOrThirteenDigitsInLength(string isbnValue)
@@ -121,18 +113,7 @@ public record Isbn
                 sum +=  (isbnValue[i] -'0') * 3;
             }
         }
-
-        if(isbnValue[12] == 'X')
-        {
-            sum += 10;
-        }
-        else
-        {
-            sum += isbnValue[12] - '0';
-        }
-
+        sum += isbnValue[12] - '0';
         return sum % 10 ==0;
     }
-
-
 }

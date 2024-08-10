@@ -221,7 +221,7 @@ var assemblies = [
   {
     "name": "Default",
     "classes": [
-      { "name": "d:\\git\\elibrary\\ddd-elibrary\\src\\Domain\\Books\\Isbn.cs", "rp": "d__git_elibrary_ddd_elibrary_src_Domain_Books_Isbn.cs.html", "cl": 73, "ucl": 8, "cal": 81, "tl": 138, "cb": 30, "tb": 34, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "d:\\git\\elibrary\\ddd-elibrary\\src\\Domain\\Books\\Isbn.cs", "rp": "d__git_elibrary_ddd_elibrary_src_Domain_Books_Isbn.cs.html", "cl": 73, "ucl": 0, "cal": 73, "tl": 125, "cb": 30, "tb": 30, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "d:\\git\\elibrary\\ddd-elibrary\\src\\Domain\\Books\\IsbnInvalidException.cs", "rp": "d__git_elibrary_ddd_elibrary_src_Domain_Books_IsbnInvalidException.cs.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 3, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
