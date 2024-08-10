@@ -36,6 +36,15 @@
                 "${workspaceFolder}/Elibrary.sln"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "generate test coverage report",
+            "command": "reportgenerator",
+            "type": "shell",
+            "args": [
+                "-reports:${workspaceFolder}/**/lcov.info",
+                "-targetdir:${workspaceFolder}/test/CoverageReport"
+            ]
         }
     ]
 }
