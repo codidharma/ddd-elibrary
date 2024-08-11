@@ -9,12 +9,14 @@ public class Book : Entity
         Isbn isbn,
         Title title,
         AuthorId authorId,
-        PublicationDate publicationDate) : base(id)
+        PublicationDate publicationDate,
+        Money price) : base(id)
     {
         Isbn = isbn;
         Title = title;
         AuthorId = authorId;
         PublicationDate = publicationDate;
+        Price = price;
     }
 
     public Isbn Isbn { get; private set; }
@@ -25,18 +27,22 @@ public class Book : Entity
 
     public PublicationDate PublicationDate { get; private set;}
 
+    public Money Price { get; private set; }
+
     public static Book Create(
         Isbn isbn,
         Title title,
         AuthorId authorId,
-        PublicationDate publicationDate)
+        PublicationDate publicationDate,
+        Money price)
     {
         var book = new Book(
             id: Guid.NewGuid(),
             isbn: isbn,
             title: title,
             authorId: authorId,
-            publicationDate: publicationDate);
+            publicationDate: publicationDate,
+            price: price);
 
         return book;
     }
