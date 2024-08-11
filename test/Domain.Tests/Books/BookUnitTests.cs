@@ -15,13 +15,15 @@ public class BookUnitTests
         var isbn = Isbn.Create(isbnValue);
         var title = new Title(titleValue);
         var authorId = new AuthorId( Guid.Parse(authorIdentifier));
+        var publicationDate = PublicationDate.Create(DateOnly.FromDateTime(DateTime.Today));
 
         //Act
-        var book = Book.Create(isbn, title, authorId);
+        var book = Book.Create(isbn, title, authorId, publicationDate);
 
         //Assert
         book.Isbn.Should().Be(isbn);
         book.Title.Should().Be(title);
         book.AuthorId.Should().Be(authorId);
+        book.PublicationDate.Should().Be(publicationDate);
     }
 }
